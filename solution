@@ -1,0 +1,15 @@
+def sort_words_by_frequency(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    sorted_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
+    return sorted_words
+
+words = ["Python", "is", "a", "powerful", "programming", "language", "Python", "is", "widely", "used"]
+sorted_words = sort_words_by_frequency(words)
+print("The words sorted by frequency of appearance are:")
+for word, count in sorted_words:
+    print(word, "-", count)
